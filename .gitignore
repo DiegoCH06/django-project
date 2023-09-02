@@ -1,0 +1,284 @@
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+### Django ###
+frontend/*.log
+frontend/*.pot
+frontend/*.pyc
+frontend/__pycache__/
+frontend/local_settings.py
+frontend/db.sqlite3
+frontend/db.sqlite3-journal
+frontend/media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+frontend/# Byte-compiled / optimized / DLL files
+frontend/*.py[cod]
+frontend/*$py.class
+# C extensions
+frontend/*.so
+
+# Distribution / packaging
+frontend/.Python
+frontend/build/
+frontend/develop-eggs/
+frontend/dist/
+frontend/downloads/
+frontend/eggs/
+frontend/.eggs/
+frontend/lib/
+frontend/lib64/
+frontend/parts/
+frontend/sdist/
+frontend/var/
+frontend/wheels/
+frontend/share/python-wheels/
+frontend/*.egg-info/
+frontend/.installed.cfg
+frontend/*.egg
+frontend/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+frontend/*.manifest
+frontend/*.spec
+
+# Installer logs
+frontend/pip-log.txt
+frontend/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+frontend/htmlcov/
+frontend/.tox/
+frontend/.nox/
+frontend/.coverage
+frontend/.coverage.*
+frontend/.cache
+frontend/nosetests.xml
+frontend/coverage.xml
+frontend/*.cover
+frontend/*.py,cover
+frontend/.hypothesis/
+frontend/.pytest_cache/
+frontend/cover/
+
+# Translations
+frontend/*.mo
+
+# Django stuff:
+
+# Flask stuff:
+frontend/instance/
+frontend/.webassets-cache
+
+# Scrapy stuff:
+frontend/.scrapy
+
+# Sphinx documentation
+frontend/docs/_build/
+
+# PyBuilder
+frontend/.pybuilder/
+frontend/target/
+
+# Jupyter Notebook
+frontend/.ipynb_checkpoints
+
+# IPython
+frontend/profile_default/
+frontend/ipython_config.py
+
+
+frontend/.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+frontend/__pypackages__/
+
+# Celery stuff
+frontend/celerybeat-schedule
+frontend/celerybeat.pid
+
+# SageMath parsed files
+frontend/*.sage.py
+
+# Environments
+frontend/.env
+frontend/.venv
+frontend/env/
+frontend/venv/
+frontend/ENV/
+frontend/env.bak/
+frontend/venv.bak/
+
+# Spyder project settings
+frontend/.spyderproject
+frontend/.spyproject
+
+# Rope project settings
+frontend/.ropeproject
+
+# mkdocs documentation
+frontend/site
+
+# mypy
+frontend/.mypy_cache/
+frontend/.dmypy.json
+frontend/dmypy.json
+
+# Pyre type checker
+frontend/.pyre/
+
+# pytype static type analyzer
+frontend/.pytype/
+
+# Cython debug symbols
+frontend/cython_debug/
+
+
+
+# BACKEND IGNORE
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+### Django ###
+backend/*.log
+backend/*.pot
+backend/*.pyc
+backend/__pycache__/
+backend/local_settings.py
+backend/db.sqlite3
+backend/db.sqlite3-journal
+backend/media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+backend/# Byte-compiled / optimized / DLL files
+backend/*.py[cod]
+backend/*$py.class
+# C extensions
+backend/*.so
+
+# Distribution / packaging
+backend/.Python
+backend/build/
+backend/develop-eggs/
+backend/dist/
+backend/downloads/
+backend/eggs/
+backend/.eggs/
+backend/lib/
+backend/lib64/
+backend/parts/
+backend/sdist/
+backend/var/
+backend/wheels/
+backend/share/python-wheels/
+backend/*.egg-info/
+backend/.installed.cfg
+backend/*.egg
+backend/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+backend/*.manifest
+backend/*.spec
+
+# Installer logs
+backend/pip-log.txt
+backend/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+backend/htmlcov/
+backend/.tox/
+backend/.nox/
+backend/.coverage
+backend/.coverage.*
+backend/.cache
+backend/nosetests.xml
+backend/coverage.xml
+backend/*.cover
+backend/*.py,cover
+backend/.hypothesis/
+backend/.pytest_cache/
+backend/cover/
+
+# Translations
+backend/*.mo
+
+# Django stuff:
+
+# Flask stuff:
+backend/instance/
+backend/.webassets-cache
+
+# Scrapy stuff:
+backend/.scrapy
+
+# Sphinx documentation
+backend/docs/_build/
+
+# PyBuilder
+backend/.pybuilder/
+backend/target/
+
+# Jupyter Notebook
+backend/.ipynb_checkpoints
+
+# IPython
+backend/profile_default/
+backend/ipython_config.py
+
+
+backend/.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+backend/__pypackages__/
+
+# Celery stuff
+backend/celerybeat-schedule
+backend/celerybeat.pid
+
+# SageMath parsed files
+backend/*.sage.py
+
+# Environments
+backend/.env
+backend/.venv
+backend/env/
+backend/venv/
+backend/ENV/
+backend/env.bak/
+backend/venv.bak/
+
+# Spyder project settings
+backend/.spyderproject
+backend/.spyproject
+
+# Rope project settings
+backend/.ropeproject
+
+# mkdocs documentation
+backend//site
+
+# mypy
+backend/.mypy_cache/
+backend/.dmypy.json
+backend/dmypy.json
+
+# Pyre type checker
+backend/.pyre/
+
+# pytype static type analyzer
+backend/.pytype/
+
+# Cython debug symbols
+backend/cython_debug/

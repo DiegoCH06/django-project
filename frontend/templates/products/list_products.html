@@ -1,0 +1,89 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+
+
+{% for message in messages %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+        var m = "{{ message }}
+        swal("Perfect", m, "success")
+        console.log("script")
+    </script>
+{% endfor %}
+
+<div style="display: flex; flex-direction: row; flex-flow: row wrap; width: 100%">
+    <div style="display: flex; flex-direction: row; flex-flow: row wrap; width: 80%">
+        <h2 style="width: 100%; text-align: center">
+            Listado de Productos
+        </h2>
+        <div style="background-color: aquamarine; margin: 13px; padding: 7px; width: 200px; height: 300px;
+                display: flex; justify-content: center; align-items: center; border-radius: 10px; box-shadow: 4px 4px 2px 1px gray ">
+            <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;"
+                 class="btn btn-primary">
+                <a href="{% url 'CreateProduct' %}" style="font-size: 80px; color: white; text-decoration: none; padding-bottom: 10px">+</a>
+            </div>
+
+        </div>
+        {% for key, value in request.session.products.items %}
+            <main style="background-color: aquamarine; margin: 13px; padding: 7px; width: 200px; height: 300px; border-radius: 10px; box-shadow: 4px 4px 2px 1px gray">
+              <h2>{{ value.name }}</h2>
+              <p>Precio: ${{ value.price }}</p>
+              <p>Disponibles: {{ value.count }}</p>
+            <a href="{% url 'add-product' key %}" class="btn btn-primary">Agregar al Carro</a>
+            <a href="{% url 'UpdateProduct' key %}" style="margin-top: 8px;" class="btn btn-secondary">Actualizar</a>
+            <a href="{% url 'DeleteProduct' key %}" style="margin-top: 8px;" class="btn btn-danger">Del</a>
+            </main>
+        {% endfor %}
+
+    </div>
+
+    <div style="width: 20%; height: 500px; background-color: aquamarine; padding-top: 10px;">
+        <h3 style="text-align: center">
+                Carro de Compras
+        </h3>
+
+        <div class="alert alert-primary" role="alert">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">NOMBRE</th>
+              <th scope="col">PRECIO</th>
+              <th scope="col">CANTIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% if request.session.car.products %}
+          {% for key, value in request.session.car.products.items %}
+              <div >
+                <tr>
+                  <td>{{value.name}}</td>
+                  <td>{{value.price}}</td>
+                  <td>{{value.items}}
+                    <a href="{% url 'add-product' key %}" class="badge btn btn-dark badge-dark">+</a>
+                    <a href="{% url 'SubtractProduct' key %}" class="badge btn btn-dark badge-dark">-</a>
+                  </td>
+                </tr>
+              </div>
+          {% endfor %}
+          {% else %}
+          <tr>
+              <td colspan="3">
+                  <div class="alert alert-danger text-center"> Sin Productos </div>
+              </td>
+          </tr>
+      {% endif %}
+                <tr>
+              <th scope="row">Total:</th>
+              <td colspan="2">$ {{request.session.car.total}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        </div>
+        <div class="row text-center">
+            <div class="col-6"><a href="{% url 'CleanCar' %}" class="btn btn-danger">Limpiar</a></div>
+            <div class="col-6"><a href="{% url 'SaveOrder' %}" class="btn btn-success">Guardar</a></div>
+        </div>
+    </div>
+</div>

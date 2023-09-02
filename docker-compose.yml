@@ -1,0 +1,59 @@
+version: '3.8'
+
+networks:
+  net:
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: shopping
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql:/var/lib/mysql
+    networks:
+      - net
+
+  # backend:
+  #   build: 
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - name=backend
+  #   container_name: backend
+  #   command: python manage.py runserver 0.0.0.0:3000
+  #   volumes:
+  #     - ./backend-docker:/app:ro
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - net
+  #   depends_on:
+  #     - mysql
+
+  # frontend:
+  #   build: 
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #     args:
+  #       - name=frontend
+  #   container_name: frontend
+  #   command: python manage.py runserver 0.0.0.0:8000
+  #   volumes:
+  #     - ./frontend-docker:/app:ro
+  #   ports:
+  #     - "8000:8000"
+  #   networks:
+  #     - net
+  #   depends_on:
+  #     - backend
+
+volumes:
+  mysql:
+  # backend-docker:
+  # frontend-docker:

@@ -1,0 +1,31 @@
+{% load bootstrap5 %}
+{% bootstrap_css %}
+
+
+<div style="display: flex; flex-direction: row; flex-flow: row wrap; width: 100%">
+    <div style="display: flex; flex-direction: row; flex-flow: row wrap; width: 80%">
+        <h2 style="width: 100%; text-align: center">
+            Listado de Pagos
+        </h2>
+        <div style="background-color: aquamarine; margin: 13px; padding: 7px; width: 200px; height: 300px;
+                display: flex; justify-content: center; align-items: center; border-radius: 10px; box-shadow: 4px 4px 2px 1px gray ">
+            <div style="border-radius: 50%; width: 100px; height: 100px; display: flex; justify-content: center; align-items: center;"
+                 class="btn btn-primary">
+                <a href="{% url 'CreatePayment' %}" style="font-size: 80px; color: white; text-decoration: none; padding-bottom: 10px">+</a>
+            </div>
+
+        </div>
+        {% for key, value in request.session.payments.items %}
+            <main style="background-color: aquamarine; margin: 13px; padding: 7px; width: 200px; height: 300px; border-radius: 10px; box-shadow: 4px 4px 2px 1px gray">
+              <h2>{{ value.name }}</h2>
+              <p>Total: ${{ value.total }}</p>
+              <p>Ordenes: {{ value.orders|length }}</p>
+            <a href="{% url 'add-product' key %}" class="btn btn-primary">Agregar al Carro</a>
+            <a href="{% url 'UpdateProduct' key %}" style="margin-top: 8px;" class="btn btn-secondary">Actualizar</a>
+            <a href="{% url 'DeletePayment' key %}" style="margin-top: 8px;" class="btn btn-danger">Del</a>
+            </main>
+        {% endfor %}
+
+    </div>
+
+</div>

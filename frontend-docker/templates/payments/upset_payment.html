@@ -1,0 +1,43 @@
+<h2>{% if update %}
+        Actualizar
+    {% else %}
+        Crear Nuevo
+    {% endif %} Pago</h2>
+<form method="post" id="mi-formulario">
+  {{ form.as_p }}
+  <button type="submit">{% if update %}
+        Actualizar
+    {% else %}
+        Crear Nuevo
+    {% endif %}</button>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $(".orders").on("change", function() {
+    if ($(this).is(":checked")) {
+      var selectedValue = $(this).val();
+      var csrfToken = $("#mi-formulario input[name=csrfmiddlewaretoken]").val();
+      $.ajax({
+        url: "{% url 'SelectOrder' %}",
+        method: "POST",
+        data: { selected_value: selectedValue,
+                csrfmiddlewaretoken: csrfToken },
+        dataType: "json",
+        success: function(response) {
+          // Manejar la respuesta de la vista de Django si es necesario
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          // Manejar errores si es necesario
+        }
+      });
+    }
+  });
+});
+</script>
+</form>
+    {% for key, value in request.session.orders_selected.items  %}
+        <li>
+            <h5>{{ value.total }}</h5>
+        </li>
+    {% endfor %}

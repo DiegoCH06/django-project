@@ -1,0 +1,8 @@
+<div style="width: 100%; height: 100%; background-color: aliceblue; display: flex; flex-direction: column; justify-content: center; align-content: center; text-align: center">
+  <h2 style="text-align: center">Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" style="background-color: darkcyan; border: 1px darkcyan solid; border-radius: 8px">Log In</button>
+</form>
+</div>
